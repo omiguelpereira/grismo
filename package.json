@@ -1,0 +1,13 @@
+{
+  "name": "grismo",
+  "version": "1.0.0",
+  "description": "Grismo brings Prisma operations in a simple and object-oriented way",
+  "main": "index.js",
+  "keywords": ["Grismo","Prisma","API","CRUD"],
+  "author": "Miguel Pereira Medeiros",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^2.28.0",
+    "prisma": "^2.28.0"
+  }
+}
