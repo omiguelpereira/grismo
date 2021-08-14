@@ -1,7 +1,9 @@
 const { PrismaClient } = require('@prisma/client')
-const { prismaErrorsToHTTP } = require('grismo/prismaErrorsToHTTP.js')
-const { httpMethodsToPrisma } = require('grismo/httpMethodsToPrisma.js')
-const { sanitizeQuerySpecifications } = require('grismo/sanitizeQuerySpecifications.js')
+const { prismaErrorsToHTTP } = require('./constants/prismaErrorsToHTTP')
+const { httpMethodsToPrisma } = require('./constants/httpMethodsToPrisma')
+const { sanitizeQuerySpecifications } = require('./functions/sanitizeQuerySpecifications')
+const {PrismaErrorToHttpCode} = require('./functions/PrismaErrorToHttpCode')
+const {createQueryResults} = require('./functions/createQueryResults')
 
 const prisma = new PrismaClient({ log: ['info'], errorFormat: 'pretty', })
 
