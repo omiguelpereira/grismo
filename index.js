@@ -7,14 +7,6 @@ const prisma = new PrismaClient({ log: ['info'], errorFormat: 'pretty', })
 
 const GrismoClient = () => {
 
-    function createQueryResults({ ...args }) {
-        return QueryResults = { ...args }
-    }
-
-    function PrismaErrorToHttpCode(errorCode, supportedErrors) {
-        return supportedErrors[errorCode]
-    }
-
     const grismo = {
 
         async operation(querySpecifications, callback) {
@@ -31,13 +23,10 @@ const GrismoClient = () => {
                 
         },
 
-
-
         createQuerySpecifications({ requestData, model, operationType }) {
             let querySpecifications = { requestData, model, operationType }
             return querySpecifications
         },
-
 
     }
     return grismo
