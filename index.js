@@ -18,7 +18,7 @@ const GrismoClient = () => {
             const operationResult = await prisma[`${querySpecifications.model}`][`${querySpecifications.operationType}`](
                 querySpecifications.requestData
             )
-                .then((data) => { return callback(createQueryResults({ data: data, ...querySpecifications, httpStatusCode: data.length > 0 ? 200 : 404 })) })
+                .then((data) => { return callback(createQueryResults({ data: data, ...querySpecifications, httpStatusCode: Object.keys(data).length > 0 ? 200 : 404 })) })
                 .catch((error) => {
                     return callback(createQueryResults({ ...querySpecifications, error, httpStatusCode: PrismaErrorToHttpCode(error.code, prismaErrorsToHTTP) }))
                 })
