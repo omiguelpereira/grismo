@@ -6,8 +6,5 @@
   "keywords": ["Grismo","Prisma","API","CRUD"],
   "author": "Miguel Pereira Medeiros",
   "license": "MIT",
-  "dependencies": {
-    "@prisma/client": "^2.28.0",
-    "prisma": "^2.28.0"
-  }
+  "dependencies": {}
 }

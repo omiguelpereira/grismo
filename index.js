@@ -1,13 +1,13 @@
-const { PrismaClient } = require('@prisma/client')
+
 const { prismaErrorsToHTTP } = require('./constants/prismaErrorsToHTTP')
 const { httpMethodsToPrisma } = require('./constants/httpMethodsToPrisma')
 const { sanitizeQuerySpecifications } = require('./functions/sanitizeQuerySpecifications')
 const {PrismaErrorToHttpCode} = require('./functions/PrismaErrorToHttpCode')
 const {createQueryResults} = require('./functions/createQueryResults')
 
-const prisma = new PrismaClient({ log: ['info'], errorFormat: 'pretty', })
 
-const GrismoClient = () => {
+
+function GrismoClient(prisma){
 
     const grismo = {
 
