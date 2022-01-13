@@ -28,8 +28,7 @@ function GrismoClient(prisma){
         },
 
         createQuerySpecifications({ requestData, model, operationType }) {
-            let querySpecifications = { requestData, model, operationType }
-            return querySpecifications
+            return { requestData, model, operationType }
         },
 
     }
