@@ -1,4 +1,5 @@
 const { httpMethodsToPrisma } = require('./constants/httpMethodsToPrisma')
+const {objectIterate, NumberConverter} = require('grismo/functions/utils/utils')
 
 const needsData = {
     PATCH: true,
@@ -19,6 +20,7 @@ function sanitizeQuerySpecifications(QuerySpecifications){
         delete QuerySpecifications.requestData.where
     }
     QuerySpecifications.operationType = httpMethodsToPrisma[QuerySpecifications.operationType]
+    QuerySpecifications= objectIterate(QuerySpecifications, NumberConverter)
     return QuerySpecifications
 }
 
