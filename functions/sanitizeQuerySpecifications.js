@@ -1,3 +1,5 @@
+const { httpMethodsToPrisma } = require('./constants/httpMethodsToPrisma')
+
 const needsData = {
     PATCH: true,
     POST: true,
@@ -16,6 +18,7 @@ function sanitizeQuerySpecifications(QuerySpecifications){
     else if(!needsWhere[QuerySpecifications.operationType]){
         delete QuerySpecifications.requestData.where
     }
+    QuerySpecifications.operationType = httpMethodsToPrisma[QuerySpecifications.operationType]
     return QuerySpecifications
 }
 
