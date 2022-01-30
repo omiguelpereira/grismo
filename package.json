@@ -1,6 +1,6 @@
 {
   "name": "grismo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Grismo brings Prisma operations in a simple and object-oriented way",
   "main": "index.js",
   "keywords": ["Grismo","Prisma","API","CRUD"],
